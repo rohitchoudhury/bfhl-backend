@@ -5,9 +5,9 @@ import bfhlRouter from './routes/bfhl.js';
 const app = express();
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://your-frontend-name.vercel.app'],
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type']
+  origin: 'http://localhost:3000', // Allow requests from localhost
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
 }));
 app.use(express.json());
 
