@@ -4,11 +4,14 @@ import bfhlRouter from './routes/bfhl.js';
 
 const app = express();
 
-app.use(cors({
-    origin: '*', // Allow all origins for testing
+const corsOptions = {
+    origin: 'http://localhost:3000', // Allow requests from React frontend
     methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type']
-}));
+    allowedHeaders: ['Content-Type'],
+    credentials: true
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use('/bfhl', bfhlRouter);
