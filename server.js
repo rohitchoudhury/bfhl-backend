@@ -5,12 +5,12 @@ import bfhlRouter from './routes/bfhl.js';
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow requests from localhost
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type']
+    origin: '*', // Allow all origins for testing
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
 }));
-app.use(express.json());
 
+app.use(express.json());
 app.use('/bfhl', bfhlRouter);
 
 const PORT = process.env.PORT || 5000;
